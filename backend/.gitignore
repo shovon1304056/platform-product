@@ -1,0 +1,20 @@
+
+# Node artifact files
+node_modules/
+dist/
+.env
+
+
+.package-lock.json/
+package-lock.json
+
+!public/
+public/*
+!public/upload/
+public/upload/*
+!public/upload/images/
+public/upload/images/*
+file/*
+
+build/*
+.vscode/*

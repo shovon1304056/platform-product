@@ -1,0 +1,582 @@
+{
+	"info": {
+		"_postman_id": "b2c5404c-93c8-41d1-b6d3-3ed91d8034ff",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26623969",
+		"_collection_link": "https://planetary-meadow-847365.postman.co/workspace/Office-Workspace~a898dd97-0298-41b9-8887-f964163fca43/collection/26623969-b2c5404c-93c8-41d1-b6d3-3ed91d8034ff?action=share&source=collection_link&creator=26623969"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"if (jsonData.success === true) {\r",
+									"    let access = jsonData.data.token;\r",
+									"    pm.environment.set(\"base_token\", access);\r",
+									"    pm.collectionVariables.set(\"base_token\", access);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"adminuser@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/authentication/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"authentication",
+								"login"
+							]
+						},
+						"description": "User must **provide** phone number and **password.**\n\nboth should be valid . if valid user can login."
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_name\": \"isheiblu\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/authentication/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"authentication",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1023"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ff-b26Cc6okkboWI99h1knjAIdW+t8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Jan 2022 03:56:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the system.\",\n    \"data\": {\n        \"user_name\": \"isheiblu\",\n        \"email\": \"isheiblu@gmail.com\",\n        \"phone\": \"01671794061\",\n        \"role\": {\n            \"role_id\": 1,\n            \"role_name\": \"Super Admin\"\n        },\n        \"profile\": {\n            \"first_name\": \"Ashraful Islam\",\n            \"last_name\": \"Sheiblu\",\n            \"email\": \"isheiblu@gmail.com\",\n            \"phone\": \"01671794064\",\n            \"profile_image\": \"default_profile_image.png\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfdG9rZW4iOiJmM2ZlNDk2MWI3NjE4NjM4NmQ1MzM4NDZjODExM2I3ZCIsInVzZXJfbmFtZSI6ImlzaGVpYmx1IiwiZW1haWwiOiJpc2hlaWJsdUBnbWFpbC5jb20iLCJwaG9uZSI6IjAxNjcxNzk0MDYxIiwicm9sZSI6eyJyb2xlX2lkIjoxLCJyb2xlX25hbWUiOiJTdXBlciBBZG1pbiJ9LCJwcm9maWxlIjp7ImZpcnN0X25hbWUiOiJBc2hyYWZ1bCBJc2xhbSIsImxhc3RfbmFtZSI6IlNoZWlibHUiLCJlbWFpbCI6ImlzaGVpYmx1QGdtYWlsLmNvbSIsInBob25lIjoiMDE2NzE3OTQwNjQiLCJwcm9maWxlX2ltYWdlIjoiZGVmYXVsdF9wcm9maWxlX2ltYWdlLnBuZyJ9LCJ0aW1lX3BlcmlvZCI6MTY0MjY1NDU5MTI5NSwiaWRlbnRpdHlfaWQiOiJhMDljOTIzNS03MjA3LTRkYWMtOGViNC1hN2FhZmU0ZDM1ODIiLCJpYXQiOjE2NDI2NTA5OTEsImV4cCI6MTY0MjczNzM5MX0.-RW7oah7yIc1854Uokok2VvXnjYxTdg1MDM18qHSIks\"\n    }\n}"
+						},
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"parent@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/authentication/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"authentication",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "754"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f2-Ov+wok2Q46ti0PmbScvREWPtjQU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Aug 2022 04:45:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the system.\",\n    \"data\": {\n        \"email\": \"parent@gmail.com\",\n        \"role\": {\n            \"role_id\": 3,\n            \"role_name\": \"parents\"\n        },\n        \"profile\": {\n            \"name\": \"Shovon\",\n            \"status\": 1,\n            \"user_id\": 1\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfdG9rZW4iOiI3ZmNhNjA0YTFhYzllZGE4NjliYjZlYmIzYWZkMDNlZCIsImVtYWlsIjoicGFyZW50QGdtYWlsLmNvbSIsInJvbGUiOnsicm9sZV9pZCI6Mywicm9sZV9uYW1lIjoicGFyZW50cyJ9LCJwcm9maWxlIjp7Im5hbWUiOiJTaG92b24iLCJzdGF0dXMiOjEsInVzZXJfaWQiOjF9LCJ0aW1lX3BlcmlvZCI6MTY2MTkyNDc0MjcyOSwiaWRlbnRpdHlfaWQiOiIzOWMwMDNhYS1mOTc2LTRhNjQtYTZkNy1lYmIzNDgxMzIyZDIiLCJpYXQiOjE2NjE5MjExNDIsImV4cCI6MTY2MjAwNzU0Mn0.VzBe5aemynciunLPAAnencApvX127409fFgpX3J2ty0\",\n        \"id\": 2,\n        \"imageFolderPath\": \"http://localhost:3003/Admin-image\",\n        \"startPoint\": \"first_time_payment_option\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "User Profile(ME)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{base_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Profile(ME)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/user/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "338"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"152-Mf1JKcSbajtauhLhbC/gZdMfvGg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jun 2022 05:59:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Ashraful Islam\",\n        \"last_name\": \"Sheiblu\",\n        \"email\": \"shovosn@medinatech.co\",\n        \"phone\": \"01671794064\",\n        \"profile_image\": \"default_profile_image.png\",\n        \"role\": {\n            \"role_id\": 1,\n            \"role_name\": \"Super Admin\"\n        },\n        \"imageFolderPath\": \"http://localhost:3001/user-profile-image\",\n        \"user_name\": \"isheiblu\",\n        \"user_id\": 1\n    }\n}"
+						},
+						{
+							"name": "User Profile(ME)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/user/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "411"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19b-4qI+pQHB5PqeDCZG4MajywkBkY4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Aug 2022 04:46:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Shovon\",\n        \"referral_link\": \"010c03bc-2d4b-4ced-9897-584e62f5a59d\",\n        \"status\": 1,\n        \"created_by\": 0,\n        \"updated_by\": 1,\n        \"created_at\": \"2022-07-25T11:42:24.000Z\",\n        \"updated_at\": \"2022-08-17T05:22:06.000Z\",\n        \"role\": {\n            \"role_id\": 3,\n            \"role_name\": \"parents\"\n        },\n        \"imageFolderPath\": \"http://localhost:3003/user-profile-image\",\n        \"user_name\": null,\n        \"user_id\": 2,\n        \"startPoint\": \"first_time_payment_option\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product Category",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product-category/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product-category",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Filter + List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "bn",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Laptop",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Abc 17",
+									"description": "max length 60",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Usefull product",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "cutted_price",
+									"value": "15",
+									"description": "must be less than the price",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "warranty",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "highlights",
+									"value": "heavy",
+									"type": "text"
+								},
+								{
+									"key": "highlights",
+									"value": "below 30 degree",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "max is 15 mb",
+									"type": "file",
+									"src": "/E:/MTL Placeholder Images/640x360/abstruct-640x360-02@2x.png"
+								},
+								{
+									"key": "image",
+									"description": "max is 15 mb",
+									"type": "file",
+									"src": "/E:/MTL Placeholder Images/640x360/abstruct-640x360-07@2x.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/product/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/product/details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3001/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "base_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

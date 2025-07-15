@@ -1,0 +1,327 @@
+[
+  {
+    "name": "staffingdb_brands",
+    "property": [
+      {
+        "name": "id",
+        "type": "bigint"
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "logo_public_id",
+        "type": "varchar"
+      },
+      {
+        "name": "logo_url",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_products",
+    "property": [
+      {
+        "name": "id",
+        "type": "bigint"
+      },
+      {
+        "name": "category_id",
+        "type": "bigint"
+      },
+      {
+        "name": "brand_id",
+        "type": "bigint"
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "type": "decimal"
+      },
+      {
+        "name": "cutted_price",
+        "type": "decimal"
+      },
+      {
+        "name": "stock",
+        "type": "int"
+      },
+      {
+        "name": "warranty",
+        "type": "int"
+      },
+      {
+        "name": "ratings",
+        "type": "decimal"
+      },
+      {
+        "name": "num_of_reviews",
+        "type": "int"
+      },
+      {
+        "name": "created_by",
+        "type": "bigint"
+      },
+      {
+        "name": "updated_by",
+        "type": "bigint"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_product_categories",
+    "property": [
+      {
+        "name": "id",
+        "type": "int"
+      },
+      {
+        "name": "title",
+        "type": "varchar"
+      },
+      {
+        "name": "image",
+        "type": "varchar"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      },
+      {
+        "name": "created_by",
+        "type": "int"
+      },
+      {
+        "name": "updated_by",
+        "type": "int"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_product_highlights",
+    "property": [
+      {
+        "name": "id",
+        "type": "bigint"
+      },
+      {
+        "name": "product_id",
+        "type": "bigint"
+      },
+      {
+        "name": "highlight",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_product_images",
+    "property": [
+      {
+        "name": "id",
+        "type": "bigint"
+      },
+      {
+        "name": "product_id",
+        "type": "bigint"
+      },
+      {
+        "name": "public_id",
+        "type": "varchar"
+      },
+      {
+        "name": "url",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_product_reviews",
+    "property": [
+      {
+        "name": "id",
+        "type": "bigint"
+      },
+      {
+        "name": "product_id",
+        "type": "bigint"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint"
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "rating",
+        "type": "decimal"
+      },
+      {
+        "name": "comment",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_roles",
+    "property": [
+      {
+        "name": "id",
+        "type": "int"
+      },
+      {
+        "name": "title",
+        "type": "varchar"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      },
+      {
+        "name": "created_by",
+        "type": "int"
+      },
+      {
+        "name": "updated_by",
+        "type": "int"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_super_admins",
+    "property": [
+      {
+        "name": "id",
+        "type": "int"
+      },
+      {
+        "name": "name",
+        "type": "varchar"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "address",
+        "type": "text"
+      },
+      {
+        "name": "profile_image",
+        "type": "varchar"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      },
+      {
+        "name": "created_by",
+        "type": "int"
+      },
+      {
+        "name": "updated_by",
+        "type": "int"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime"
+      }
+    ]
+  },
+  {
+    "name": "staffingdb_users",
+    "property": [
+      {
+        "name": "id",
+        "type": "int"
+      },
+      {
+        "name": "role_id",
+        "type": "int"
+      },
+      {
+        "name": "profile_id",
+        "type": "int"
+      },
+      {
+        "name": "email",
+        "type": "varchar"
+      },
+      {
+        "name": "password",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "int"
+      },
+      {
+        "name": "updated_by",
+        "type": "int"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime"
+      }
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+
+
+
+DB_HOST_v1=localhost
+DB_USER_v1=root
+DB_PASS_v1=""
+DB_DATABASE_v1=staffing_products
+
+
+backend_url="http://localhost:3001"
+
+admin_image_path_name = "/image/admin-image"
+admin_image_path = "public/upload/images/admin-images/"
+
+user_profile_image_path_name = "/image/profile"
+user_profile_image_path = "public/upload/images/profile/"
+
+
+product_category_image_path_name = "/image/product-category"
+product_category_image_path = "public/upload/images/product-category/"
+
+
+product_image_path_name = "/image/product"
+product_image_path = "public/upload/images/product/"
+
